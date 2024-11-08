@@ -19,6 +19,7 @@ struct SendMessageView: View {
           TextField("Type here", text: $enteredMessage)
           Button {
             print("add attachment action")
+            // Add showing gallery here
           } label: {
             Image(systemName: "paperclip")
           }
@@ -31,7 +32,6 @@ struct SendMessageView: View {
             Image(systemName: "paperplane.fill")
           }
           .frame(width: 30, height: 30)
-          
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
