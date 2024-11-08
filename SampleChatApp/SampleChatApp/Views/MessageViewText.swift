@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct MessageView: View {
-  var messageModel: MessageModel
+struct MessageViewText: View {
+  var messageModel: MessageUIModel
   var body: some View {
     if messageModel.sourceOfTheMessage == .fromChatbot {
       ChatbotMessageView(message: messageModel.message)
@@ -64,5 +64,5 @@ fileprivate struct HumanMessageView: View {
 }
 
 #Preview {
-  MessageView(messageModel: MessageModel(message: "Message 1", sourceOfTheMessage: .fromChatbot))
+  MessageViewText(messageModel: MessageUIModel(message: "Message 1", sourceOfTheMessage: .fromChatbot))
 }
