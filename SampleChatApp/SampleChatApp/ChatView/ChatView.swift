@@ -17,9 +17,13 @@ struct ChatView: View {
       ScrollViewReader { scrollInstance in
         List {
           ForEach(viewModel.messages, id: \.id) { eachMessage in
-            MessageView(messageModel: eachMessage)
-              .listRowSeparator(.hidden)
-              .id(eachMessage.id)
+            if eachMessage.messageType == .text {
+              MessageViewText(messageModel: eachMessage)
+                .listRowSeparator(.hidden)
+                .id(eachMessage.id)
+            } else {
+              // Handle message views based on the model type
+            }
           }
           if viewModel.isReplyGenerating {
             ThreeDotAnimationView()
