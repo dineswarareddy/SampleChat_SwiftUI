@@ -31,6 +31,9 @@ struct ChatView: View {
               .id(loadIndicatorId)
           }
         }
+        .onTapGesture {
+          UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+        }
         .listStyle(.plain)
         .listRowSpacing(-12)
         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
